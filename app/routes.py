@@ -100,8 +100,9 @@ def list_voices():
         }
     )
 
+
 @api.route('/v1/models', methods=['GET'])
-def list_voices():
+def list_models():
     """
     List available models.
 
