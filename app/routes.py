@@ -100,6 +100,22 @@ def list_voices():
         }
     )
 
+@api.route('/v1/models', methods=['GET'])
+def list_voices():
+    """
+    List available models.
+
+    Returns OpenAI-compatible voice list format.
+    """
+
+    return jsonify(
+        {
+            'models': [
+                { 'id': 'pocket-tts' }
+            ],
+        }
+    )
+
 
 @api.route('/v1/audio/speech', methods=['POST'])
 def generate_speech():
