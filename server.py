@@ -19,6 +19,7 @@ import sys
 from app import create_app, init_tts_service
 from app.config import Config
 from app.logging_config import get_logger
+from flash_cors import CORS
 
 
 def parse_args():
@@ -103,6 +104,7 @@ def main():
     app = create_app(
         {'STREAM_DEFAULT': args.stream, 'TEXT_PREPROCESS_DEFAULT': args.text_preprocess}
     )
+    CORS(app)
 
     logger = get_logger()
 
